@@ -1,4 +1,4 @@
-# Bridge
+# Star Trek Bridge - LCARS
 
 An LCARS-style layout for the Herdr desktop app, the starship console look
 from Star Trek: an orange elbow joins the sidebar rail to the tab bar, a gold elbow
@@ -6,7 +6,7 @@ joins it to the status strip, and every control is a solid colored bar or pill
 with black condensed uppercase text. Terminals keep the person's own font,
 size and colors.
 
-![Bridge](preview.png)
+![Star Trek Bridge - LCARS](preview.png)
 
 ## What you see
 
