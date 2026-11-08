@@ -1,7 +1,7 @@
 # Bunker
 
 A full-window layout for the Herdr desktop app styled after the utilitarian
-terminals of an underground bunker: a grey-green console housing with green
+terminals of an underground bunker, inspired by the TV series Silo: a grey-green console housing with green
 phosphor screens, DOS-style menus, boxed form fields and keys, a numbered
 agent log and a keyword index bar. Terminals keep the person's own font, size
 and colors.

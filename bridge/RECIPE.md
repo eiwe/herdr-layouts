@@ -1,7 +1,7 @@
 # Bridge
 
-A full-window layout for the Herdr desktop app in the style of a starship
-console: an orange elbow joins the sidebar rail to the tab bar, a gold elbow
+An LCARS-style layout for the Herdr desktop app, the starship console look
+from Star Trek: an orange elbow joins the sidebar rail to the tab bar, a gold elbow
 joins it to the status strip, and every control is a solid colored bar or pill
 with black condensed uppercase text. Terminals keep the person's own font,
 size and colors.

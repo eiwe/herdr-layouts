@@ -15,7 +15,7 @@ mockups, layouts and mods were designed and written together.
 
 | Folder | What it is | State |
 |---|---|---|
-| [`bridge/`](bridge/RECIPE.md) | Starship-console look: colored elbows, rails and pill buttons | Built |
+| [`bridge/`](bridge/RECIPE.md) | LCARS (Star Trek) starship-console look: colored elbows, rails and pill buttons | Built |
 | [`bunker/`](bunker/RECIPE.md) | Bunker-terminal look: grey-green housing, green phosphor screens, DOS menus | Built |
 
 ## Install
