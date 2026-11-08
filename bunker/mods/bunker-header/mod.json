@@ -1,0 +1,8 @@
+{
+  "place": "none",
+  "title": "Tabs",
+  "cloned_from": {
+    "name": "bridge-tabs",
+    "version": "0.1.13"
+  }
+}

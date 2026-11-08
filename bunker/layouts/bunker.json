@@ -1,0 +1,120 @@
+{
+  "id": "root",
+  "type": "column",
+  "titlebar": "none",
+  "traffic_lights": [32, 30],
+  "preview": "layouts/bunker.svg",
+  "padding": 18,
+  "gap": 14,
+  "background": { "gradient": ["#475042", "#2f362c"], "angle": 180 },
+  "ui_font": "VT323",
+  "terminal_padding": [14, 12],
+  "colors": {
+    "canvas": "#3b4337",
+    "chrome": "#03140d",
+    "surface": "#03140d",
+    "popover": "#03140d",
+    "accent": "#4dffb0",
+    "border": "#145038",
+    "input": "#2fb07e",
+    "selected": "#0b3a26",
+    "hover": "#0b3a26"
+  },
+  "children": [
+    {
+      "id": "top",
+      "type": "row",
+      "size": { "px": 96 },
+      "gap": 14,
+      "resizable": false,
+      "children": [
+        { "id": "plate", "type": "block", "size": { "px": 76 }, "window_drag": true,
+          "content": { "mod": "bunker-frame", "props": { "part": "plate" } } },
+        { "id": "tabs", "type": "block", "size": { "weight": 1 }, "window_drag": true,
+          "background": "#03140d", "border": { "width": 2, "color": "#5d6859" }, "radius": 12, "padding": [8, 14],
+          "content": { "mod": "bunker-header" } }
+      ]
+    },
+    {
+      "id": "middle",
+      "type": "row",
+      "size": { "weight": 1 },
+      "gap": 14,
+      "resizable": false,
+      "children": [
+        {
+          "id": "sidebar",
+          "type": "column",
+          "size": { "px": 312 },
+          "min": 200,
+          "max": 480,
+          "gap": 6,
+          "resizable": false,
+          "background": "#03140d",
+          "border": { "width": 2, "color": "#5d6859" },
+          "radius": 12,
+          "padding": [12, 14],
+          "children": [
+            { "id": "spaces", "type": "block", "size": { "weight": 1 }, "min": 120, "content": { "mod": "bunker-spaces" } },
+            { "id": "agents", "type": "block", "size": { "weight": 1 }, "min": 120, "content": { "mod": "bunker-agents" } },
+            { "id": "sidebar-footer", "type": "block", "size": { "px": 34 },
+              "content": { "mod": "bunker-frame", "props": { "part": "footer" } } }
+          ]
+        },
+        {
+          "id": "work-body",
+          "type": "row",
+          "size": { "weight": 1 },
+          "gap": 12,
+          "floating": [
+            { "id": "alert", "content": { "mod": "bunker-alert" }, "edge": "top", "align": "center" }
+          ],
+          "children": [
+            {
+              "id": "main",
+              "type": "block",
+              "content": {
+                "tab": "active",
+                "pane": {
+                  "gap": 12,
+                  "radius": 16,
+                  "background": "background",
+                  "border": { "width": 2, "color": "#5d6859" },
+                  "focus": { "width": 2, "color": "#4dffb0" },
+                  "header": { "content": { "mod": "bunker-pane" }, "height": 34, "position": "top", "reveal": "always" },
+                  "lone": true
+                }
+              }
+            },
+            {
+              "id": "panel",
+              "type": "column",
+              "size": { "px": 368 },
+              "min": 280,
+              "max": 900,
+              "hidden": true,
+              "background": "#03140d",
+              "border": { "width": 2, "color": "#5d6859" },
+              "radius": 12,
+              "padding": 6,
+              "children": [
+                {
+                  "id": "panel-body",
+                  "type": "stack",
+                  "active": "files",
+                  "children": [
+                    { "id": "files", "type": "block", "content": { "mod": "files" } },
+                    { "id": "changes", "type": "block", "content": { "mod": "changes" } }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    { "id": "status", "type": "block", "size": { "px": 52 },
+      "background": "#03140d", "border": { "width": 2, "color": "#5d6859" }, "radius": 10, "padding": [6, 14],
+      "content": { "mod": "bunker-status" } }
+  ]
+}
