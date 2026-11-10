@@ -25,7 +25,8 @@ function place(s, ps) {
   const tabs = new Set((s.tabs ?? []).map((c) => c.id));
   return ps.find((p) => tabs.has(p.tab) && p.cwd)?.cwd || s.folder;
 }
-const rowHeight = ({ tree }) => (tree ? 34 : 38);
+// A card with a git line under the name gets more height, so that line clears the border.
+const rowHeight = ({ tree, two }) => (tree ? (two ? 40 : 34) : (two ? 44 : 38));
 const where = (s, ps) => JSON.stringify([s.machine ?? null, place(s, ps)]);
 const base = (path) => path.replace(/\/+$/, "").split("/").pop();
 // Changes made outside Herdr (an editor's save, a commit in another app): looked
@@ -362,13 +363,22 @@ export default class Spaces extends View {
   // Only what's unusual, after the name: "herdr \u00b7 spike \u21912 \u21931". The repo or
   // branch goes when the name already says it (a worktree is named after its branch),
   // and master/main go: nearly every space is on one.
-  gitTail(g, tree, name, t, on = false) {
+  where(g, tree, name) {
     const raw = g.branch ?? "detached";
     const same = (a) => a.toLowerCase() === name.toLowerCase();
     const branch = same(raw) || raw === "master" || raw === "main" ? "" : raw;
     const repo = tree || same(g.name) ? "" : g.name;
-    const where = [repo, branch].filter(Boolean).join(" \u00b7 ");
+    return [repo, branch].filter(Boolean).join(" \u00b7 ");
+  }
+
+  hasTail(g, tree, name) {
+    return Boolean(g) && (Boolean(this.where(g, tree, name)) || g.ahead > 0 || g.behind > 0);
+  }
+
+  gitTail(g, tree, name, t, on = false) {
+    const where = this.where(g, tree, name);
     return h_flex()
+      .line_height(1.1)
       .flex_1()
       .min_w(0)
       .gap(5)
@@ -393,7 +403,7 @@ export default class Spaces extends View {
       .ml(this.indent ?? 0)
       .px(9)
       .mb(4)
-      .h(rowHeight({ tree }))
+      .h(rowHeight({ tree, two: this.hasTail(g, tree, w.name) }))
       .flex_none()
       .justify_center()
       .border(on ? 2 : 1)
@@ -437,8 +447,8 @@ export default class Spaces extends View {
           .when(Boolean(tree), el => el.child(div().flex_none().text_color(DOS.dim).child("└─")))
           .child(div().w(tree ? 14 : 18).h(tree ? 14 : 18).flex_none().rounded(9).border(1).border_color(DOS.text).when(on, (d) => d.bg(DOS.text)))
           .child(v_flex().flex_1().min_w(0)
-            .child(div().truncate().font_family(HEAD).font_weight(700).text_size(16).text_color(DOS.text).child(w.name.toUpperCase()))
-            .when(Boolean(g), (el) => el.child(h_flex().child(this.gitTail(g, tree, w.name, t, on)))))
+            .child(div().truncate().line_height(1.1).font_family(HEAD).font_weight(700).text_size(16).text_color(DOS.text).child(w.name.toUpperCase()))
+            .when(this.hasTail(g, tree, w.name), (el) => el.child(h_flex().child(this.gitTail(g, tree, w.name, t, on)))))
           .child(div().flex_none().text_size(12).text_color(on ? DOS.text : DOS.dim).child(two(i + 1))),
       );
   }
