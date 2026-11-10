@@ -1,0 +1,122 @@
+{
+  "id": "root",
+  "type": "column",
+  "titlebar": "none",
+  "traffic_lights": [24, 28],
+  "preview": "layouts/romulus.svg",
+  "padding": 16,
+  "gap": 12,
+  "background": { "gradient": ["#211f1a", "#141310"], "angle": 180 },
+  "ui_font": "Share Tech Mono",
+  "terminal_padding": [14, 12],
+  "colors": {
+    "canvas": "#1a1915",
+    "chrome": "#0a0906",
+    "surface": "#0a0906",
+    "popover": "#0a0906",
+    "accent": "#f2c14e",
+    "border": "#3a362d",
+    "input": "#6b5520",
+    "selected": "#2a2210",
+    "hover": "#1c170c"
+  },
+  "children": [
+    {
+      "id": "top",
+      "type": "row",
+      "size": { "px": 104 },
+      "gap": 12,
+      "resizable": false,
+      "children": [
+        { "id": "plate", "type": "block", "size": { "px": 68 }, "window_drag": true,
+          "background": "#2a2721", "border": { "width": 1, "color": "#3a362d" }, "radius": 8,
+          "content": { "mod": "romulus-frame", "props": { "part": "plate" } } },
+        { "id": "tabs", "type": "block", "size": { "weight": 1 }, "window_drag": true,
+          "background": "#0a0906", "border": { "width": 3, "color": "#3a362d" }, "radius": 8, "padding": [8, 14],
+          "content": { "mod": "romulus-header" } }
+      ]
+    },
+    {
+      "id": "middle",
+      "type": "row",
+      "size": { "weight": 1 },
+      "gap": 12,
+      "resizable": false,
+      "children": [
+        { "id": "keys", "type": "block", "size": { "px": 68 },
+          "background": "#2a2721", "border": { "width": 1, "color": "#3a362d" }, "radius": 8,
+          "content": { "mod": "romulus-frame", "props": { "part": "keys" } } },
+        {
+          "id": "sidebar",
+          "type": "column",
+          "size": { "px": 300 },
+          "min": 200,
+          "max": 480,
+          "gap": 12,
+          "resizable": false,
+          "children": [
+            { "id": "spaces", "type": "block", "size": { "weight": 1.15 }, "min": 140,
+              "background": "#07110d", "border": { "width": 3, "color": "#3a362d" }, "radius": 8, "padding": 12,
+              "content": { "mod": "romulus-spaces" } },
+            { "id": "agents", "type": "block", "size": { "weight": 1 }, "min": 140,
+              "background": "#0a0906", "border": { "width": 3, "color": "#3a362d" }, "radius": 8, "padding": [10, 12],
+              "content": { "mod": "romulus-agents" } }
+          ]
+        },
+        {
+          "id": "work-body",
+          "type": "row",
+          "size": { "weight": 1 },
+          "gap": 10,
+          "floating": [
+            { "id": "alert", "content": { "mod": "romulus-alert" }, "edge": "top", "align": "center" }
+          ],
+          "children": [
+            {
+              "id": "main",
+              "type": "block",
+              "content": {
+                "tab": "active",
+                "pane": {
+                  "gap": 10,
+                  "radius": 8,
+                  "background": "background",
+                  "border": { "width": 2, "color": "#3a362d" },
+                  "focus": { "width": 2, "color": "#9fd6b0" },
+                  "header": { "content": { "mod": "romulus-pane" }, "height": 32, "position": "top", "reveal": "always" },
+                  "lone": true
+                }
+              }
+            },
+            {
+              "id": "panel",
+              "type": "column",
+              "size": { "px": 368 },
+              "min": 280,
+              "max": 900,
+              "hidden": true,
+              "background": "#0a0906",
+              "border": { "width": 3, "color": "#3a362d" },
+              "radius": 8,
+              "padding": 6,
+              "children": [
+                {
+                  "id": "panel-body",
+                  "type": "stack",
+                  "active": "files",
+                  "children": [
+                    { "id": "files", "type": "block", "content": { "mod": "files" } },
+                    { "id": "changes", "type": "block", "content": { "mod": "changes" } }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    { "id": "status", "type": "block", "size": { "px": 60 },
+      "background": "#0a0906", "border": { "width": 3, "color": "#3a362d" }, "radius": 8, "padding": [0, 14],
+      "content": { "mod": "romulus-status" } }
+  ]
+}

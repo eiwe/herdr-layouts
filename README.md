@@ -17,6 +17,7 @@ mockups, layouts and mods were designed and written together.
 |---|---|---|
 | [`bridge/`](bridge/RECIPE.md) | Star Trek Bridge - LCARS: starship-console look: colored elbows, rails and pill buttons | Built |
 | [`bunker/`](bunker/RECIPE.md) | Bunker-terminal look: grey-green housing, green phosphor screens, DOS menus | Built |
+| [`romulus/`](romulus/RECIPE.md) | Alien: Romulus - Ship Console: amber screens, orange command keys, boxed digits, a wake-up sequence | Built |
 
 ## Install
 
@@ -36,7 +37,10 @@ own layout with Cmd-Shift-L, or `layout.switch {"name":"main"}`.
    mod names with the layout name so layouts never share or overwrite a mod.
 2. Write `<name>/RECIPE.md` (Herdr's format: what you see, how it behaves,
    built from, watch out, done when).
-3. Add a row to the table above.
+3. Save a screenshot of the layout as `<name>/preview.png` (`herdr-app shot`).
+   The gallery lists a folder once it has `layouts/`, `mods/`, `RECIPE.md`
+   and `preview.png`.
+4. Add a row to the table above.
 
 ## Terminal look
 
@@ -63,6 +67,11 @@ The look they were designed with:
   License 1.1; see the `OFL.txt` beside each.
 - Barlow Semi Condensed (`bridge/mods/bridge-frame/fonts/`) is licensed under
   the SIL Open Font License 1.1; see `OFL-Barlow.txt` beside it.
+- Share Tech Mono and Barlow Semi Condensed (`romulus/mods/romulus-frame/fonts/`)
+  are licensed under the SIL Open Font License 1.1; see the `OFL-*.txt` beside them.
 - The bridge look is inspired by LCARS, the console style from Star Trek; the bunker look is inspired
-  by the screens in the TV series Silo. These are unofficial
-  fan-styled layouts with original artwork and no affiliation.
+  by the screens in the TV series Silo; the romulus look by the ship consoles in the film
+  Alien: Romulus. These are unofficial fan-styled layouts with no affiliation. Bridge and
+  Bunker use original artwork; Romulus carries the film's fictional company logo
+  (`romulus/mods/romulus-frame/mark*.svg`), redrawn as vector paths. The mark is a studio
+  trademark and belongs to its owner.
