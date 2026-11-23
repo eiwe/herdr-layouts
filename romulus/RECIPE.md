@@ -6,6 +6,8 @@ thick amber bars, a cream title bar, square backlit orange keys, digits in separ
 boxes, and a four-stage wake-up sequence when the layout opens. Terminals keep the
 person's own font, size and colors.
 
+![Alien: Romulus - Ship Console](preview.png)
+
 ## What you see
 
 - **Housing:** the window background is a vertical gradient `#211f1a` to `#141310`,
