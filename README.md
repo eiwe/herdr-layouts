@@ -13,11 +13,23 @@ mockups, layouts and mods were designed and written together.
 
 ## Layouts
 
-| Folder | What it is | State |
-|---|---|---|
-| [`bridge/`](bridge/RECIPE.md) | Star Trek Bridge - LCARS: starship-console look: colored elbows, rails and pill buttons | Built |
-| [`bunker/`](bunker/RECIPE.md) | Bunker-terminal look: grey-green housing, green phosphor screens, DOS menus | Built |
-| [`romulus/`](romulus/RECIPE.md) | Alien: Romulus - Ship Console: amber screens, orange command keys, boxed digits, a wake-up sequence | Built |
+| Folder | Inspired by | What it is | State |
+|---|---|---|---|
+| [`bridge/`](bridge/RECIPE.md) | LCARS, the console style from Star Trek | Starship console: colored elbows, rails and pill buttons | Built |
+| [`bunker/`](bunker/RECIPE.md) | The terminal screens in the TV series Silo | Bunker terminal: grey-green housing, green phosphor screens, DOS menus | Built |
+| [`romulus/`](romulus/RECIPE.md) | The ship consoles in the film Alien: Romulus | Ship console: amber screens, orange command keys, boxed digits, a wake-up sequence | Built |
+
+### Bridge
+
+![Bridge layout: orange, lilac and gold rails frame the spaces and agents sidebar beside two terminal panes](bridge/preview.png)
+
+### Bunker
+
+![Bunker layout: a grey-green housing holds green phosphor panels for spaces, the agent log and two terminal panes, with an alert banner on top](bunker/preview.png)
+
+### Romulus
+
+![Romulus layout: a dark housing holds amber panels for spaces and active operations, a column of orange keys, and a red attention banner over two terminal panes](romulus/preview.png)
 
 ## Install
 
@@ -40,7 +52,7 @@ own layout with Cmd-Shift-L, or `layout.switch {"name":"main"}`.
 3. Save a screenshot of the layout as `<name>/preview.png` (`herdr-app shot`).
    The gallery lists a folder once it has `layouts/`, `mods/`, `RECIPE.md`
    and `preview.png`.
-4. Add a row to the table above.
+4. Add a row to the table above, and the screenshot under it.
 
 ## Terminal look
 
